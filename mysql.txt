@@ -5,4 +5,26 @@
 
 	## mysql create new account 'user/pass' and grant access authority ##
 	## with mysql root login ##
-	> grant all on <database>.* to <new_user>@<host> identified by <password>	
+	> grant all on <database>.* to <new_user>@<host> identified by <password>
+
+	## check databases and tables;
+	> show databases;
+	> use <database>;
+	> show tables;
+
+	## mysql create/drop database
+	> create database sql_basic;
+	> drop database sql_basic;
+
+	## mysql create/delete table
+	> create table <table_name> ( field1 args, field2 args, ..);
+
+	## mysql rename table name
+	> rename table <old_name> to <new_name>
+
+	## table constraint: primary key
+
+	## drop/alter table
+	> drop table <table_name>;
+	> alter table <table_name> add column (fields define);
+	> alter table <table_name> del column (fields define);
