@@ -1,0 +1,8 @@
+### mysql usage notes ###
+
+	## mysql root use login ##
+	$ mysql -h <host> -p -u root
+
+	## mysql create new account 'user/pass' and grant access authority ##
+	## with mysql root login ##
+	> grant all on <database>.* to <new_user>@<host> identified by <password>	
