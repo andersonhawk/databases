@@ -1,5 +1,13 @@
 ### mysql usage notes ###
 
+# modify mysql root password #
+	$ mysql -u root
+	mysql> update mysql.user set password = password('mysql') where user = 'root';
+	mysql> flush privileges;
+
+# login mysql with root and password #
+	$ mysql -u root -p
+
 	## mysql root use login ##
 	$ mysql -h <host> -p -u root
 
