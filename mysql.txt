@@ -63,29 +63,27 @@ mysql> select a.video_id, a.video_author, b.movie_count
 mysql> select * from movie_cnt where movie_count is NULL;
 mysql> select * from movie_cnt where movie_count is NOT NULL;
 
+# create temporary table #
+mysql> create temporary table summary(
+    -> video_name VARCHAR(50) NOT NULL,
+    -> total_video INT NOT NULL DEFAULT 0);
+
+# modify table structure #
+mysql> create table sample_tbl(
+    -> a INT,
+    -> b CHAR(20));
+
+mysql> alter table sample_tbl drop a;
+mysql> alter table sample_tbl add a INT;
+mysql> alter table sample_tbl modify b CHAR(10);
+mysql> alter table sample_tbl rename to another_tbl;
+
+# distinct about duplicate record #
+mysql> select distinct video_author from video_tbl order by video_author;
+
+
 
 	## mysql create new account 'user/pass' and grant access authority ##
 	## with mysql root login ##
 	> grant all on <database>.* to <new_user>@<host> identified by <password>
 
-	## check databases and tables;
-	> show databases;
-	> use <database>;
-	> show tables;
-
-	## mysql create/drop database
-	> create database sql_basic;
-	> drop database sql_basic;
-
-	## mysql create/delete table
-	> create table <table_name> ( field1 args, field2 args, ..);
-
-	## mysql rename table name
-	> rename table <old_name> to <new_name>
-
-	## table constraint: primary key
-
-	## drop/alter table
-	> drop table <table_name>;
-	> alter table <table_name> add column (fields define);
-	> alter table <table_name> del column (fields define);
