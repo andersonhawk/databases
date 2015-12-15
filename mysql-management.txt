@@ -4,6 +4,7 @@
 # modify mysql root password #
 	$ mysql -u root
 	mysql> update mysql.user set password = password('mysql') where user = 'root';
+	mysql> set password for 'root'@'localhost' = password('secret');
 	mysql> flush privileges;
 
 # login mysql with root and password #
@@ -25,3 +26,10 @@ mysql> grant all on <database>.* to <new_user>@<host> identified by <password>
 	$ mysql -u root -p < sakila-data.sql
 # use sakila database #
 	$ mysql -u root -p sakila
+
+# create mysql user account 'mysql' #
+	mysql> create user 'mysql'@'localhost' identified by 'secret';
+# grant privileges to 'mysql' account #
+	mysql> grant all privileges on sakila.* to 'mysql'@'localhost';
+
+
