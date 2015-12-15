@@ -32,4 +32,18 @@ mysql> grant all on <database>.* to <new_user>@<host> identified by <password>
 # grant privileges to 'mysql' account #
 	mysql> grant all privileges on sakila.* to 'mysql'@'localhost';
 
+# mysql data type #
+	CHAR/VARCHAR: 255/65535
+	BINARY/VARBINARY: storing binary data
+	BLOB/TEXT: store large amount of binary and non-binary string data (images, books)
+	ENUM: defines a list of permitted string values (up to 65535 values allowed)
+	SET: defines a list of multiple allowable string values (up to 64 values allowed)
 
+	INTEGER: INT, BIGINT, MEDIUMINT, SMALLINT, TINYINT
+	FLOAT/DOUBLE:
+	DECIMAL
+	BOOLEAN
+	UNSIGNED
+	ZEROFILL
+
+	YEAR DATE DATETIME TIMESTAMP
