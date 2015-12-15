@@ -13,3 +13,9 @@
 # mysql create new account 'user/pass' and grant access authority #
 mysql> grant all on <database>.* to <new_user>@<host> identified by <password>
 
+
+# use mysql sakila sample database #
+# download sakila database with link dev.mysql.com/doc/index-other.html #
+# import sakila schema and data into mysql #
+	mysql> source /root/sample/sakila-db/sakila-schema.sql;
+	mysql> source /root/sample/sakila-db/sakila-data.sql;
