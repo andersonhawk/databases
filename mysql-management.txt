@@ -13,7 +13,12 @@
 
 # mysql create new account 'user/pass' and grant access authority #
 mysql> grant all on <database>.* to <new_user>@<host> identified by <password>
+mysql> grant all on <database>.* to mysql@10.2.15.106 identified by 'secret'
 
+	$ mysql -h 10.2.15.109 -u mysql -p <on 10.2.15.106>
+
+# phpMyAdmin, mysql workbench client tools #
+# modify http service configuration about phpmyadmin configuration #
 
 # use mysql sakila sample database #
 # download sakila database with link dev.mysql.com/doc/index-other.html #
@@ -51,3 +56,4 @@ mysql> grant all on <database>.* to <new_user>@<host> identified by <password>
 # mysql check table structure #
 	mysql> describe table;
 	mysql> describe table\G
+
