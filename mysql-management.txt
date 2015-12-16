@@ -47,3 +47,7 @@ mysql> grant all on <database>.* to <new_user>@<host> identified by <password>
 	ZEROFILL
 
 	YEAR DATE DATETIME TIMESTAMP
+
+# mysql check table structure #
+	mysql> describe table;
+	mysql> describe table\G

@@ -71,3 +71,37 @@ mysql> alter table sample_tbl rename to another_tbl;
 # distinct about duplicate record #
 mysql> select distinct video_author from video_tbl order by video_author;
 
+
+# primary key and foreign key #
+
+mysql> show create table actor\G
+*************************** 1. row ***************************
+       Table: actor
+Create Table: CREATE TABLE `actor` (
+  `actor_id` smallint(5) unsigned NOT NULL AUTO_INCREMENT,
+  `first_name` varchar(45) NOT NULL,
+  `last_name` varchar(45) NOT NULL,
+  `last_update` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE
+CURRENT_TIMESTAMP,
+  PRIMARY KEY (`actor_id`),
+  KEY `idx_actor_last_name` (`last_name`)
+) ENGINE=InnoDB AUTO_INCREMENT=201 DEFAULT CHARSET=utf8
+1 row in set (0.00 sec)
+
+mysql> show create table film_actor\G
+*************************** 1. row ***************************
+       Table: film_actor
+Create Table: CREATE TABLE `film_actor` (
+  `actor_id` smallint(5) unsigned NOT NULL,
+  `film_id` smallint(5) unsigned NOT NULL,
+  `last_update` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE
+CURRENT_TIMESTAMP,
+  PRIMARY KEY (`actor_id`,`film_id`),
+  KEY `idx_fk_film_id` (`film_id`),
+  CONSTRAINT `fk_film_actor_actor` FOREIGN KEY (`actor_id`) REFERENCES `actor`
+(`actor_id`) ON UPDATE CASCADE,
+  CONSTRAINT `fk_film_actor_film` FOREIGN KEY (`film_id`) REFERENCES `film`
+(`film_id`) ON UPDATE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8
+1 row in set (0.00 sec)
+
