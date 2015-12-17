@@ -1,0 +1,9 @@
+## php notes ##
+	# server-side scripting language #
+	# not a compiled language #
+	# designed for use with html #
+	# provides more flexibility than HTML alone #
+	# syntax is similar to C, Java, Perl #
+
+# php install page: www.php.net/manual/en/install.php #
+# php reserved words: www.php.net/manual/en/reserved.php #
