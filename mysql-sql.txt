@@ -105,3 +105,7 @@ CURRENT_TIMESTAMP,
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8
 1 row in set (0.00 sec)
 
+# join three table #
+select customer.first_name, customer.last_name, address.address, city.city_id
+	from customer inner join address on address.address_id = customer.address_id
+	inner join city on city.city_id = address.city_id
