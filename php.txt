@@ -7,3 +7,6 @@
 
 # php install page: www.php.net/manual/en/install.php #
 # php reserved words: www.php.net/manual/en/reserved.php #
+# php array: www.php.net/manual/en/ref.array.php #
+
+# php types: string, int/integer, float, array, bool/boolean #
