@@ -57,3 +57,24 @@ mysql> grant all on <database>.* to mysql@10.2.15.106 identified by 'secret'
 	mysql> describe table;
 	mysql> describe table\G
 
+
+# mysql performance (mysql> help index) #
+	1. An index organizes column data in a very efficient manner. #
+	2. Mysql can find rows associated with indexed data up to hundreds of
+		times faster than with unindexed data.
+	3. Performance improved when using WHERE clause, table joins, sorting
+		and grouping, and the MIN() and MAX() functions.
+
+# optimizing mysqls configuration (mysql> show variables) #
+	Caching, resource management, connections, buffer size
+
+	mysql> show variables like 'key%';
+	mysql> set global key_buffer_size = 16777216
+	mysql> show variables like 'query_cache%'
+	mysql> show status like 'Q%'
+
+# mysql sample configuration files: /usr/share/mysql/my-xx.cnf, #
+# replace one of cnf to /etc/my.cnf, and restart mysqld service #
+	my-huge.cnf, my-innodb-heavy-4G.cnf, my-large.cnf
+	my-medium.cnf, my-small.cnf
+

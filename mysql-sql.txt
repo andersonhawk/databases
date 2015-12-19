@@ -109,3 +109,8 @@ CURRENT_TIMESTAMP,
 select customer.first_name, customer.last_name, address.address, city.city_id
 	from customer inner join address on address.address_id = customer.address_id
 	inner join city on city.city_id = address.city_id
+
+
+# index #
+mysql> show index from actor;
+mysql> show create table actor;
