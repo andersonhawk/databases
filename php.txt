@@ -33,3 +33,13 @@
 	xdebug		http://xdebug.org
 	DBG		http://www.php-debugger.com/dbg/
 	FirePHP		http://www.firephp.org/
+
+
+# web actions #
+	URLs/Links	GET method
+	Forms		POST
+	Cookie		COOKIE
+
+# urlencode is early stand, but rawurlencode is more compatible generally. #
+
+# include(), require(), include_once(), require_once() #
