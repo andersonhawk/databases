@@ -1,6 +1,5 @@
 ## mysql database management notes ##
 
-
 # modify mysql root password #
 	$ mysql -u root
 	mysql> update mysql.user set password = password('mysql') where user = 'root';
@@ -10,12 +9,6 @@
 # login mysql with root and password #
 	$ mysql -u root -p
 	$ mysql -h <host> -p -u root
-
-# mysql create new account 'user/pass' and grant access authority #
-mysql> grant all on <database>.* to <new_user>@<host> identified by <password>
-mysql> grant all on <database>.* to mysql@10.2.15.106 identified by 'secret'
-
-	$ mysql -h 10.2.15.109 -u mysql -p <on 10.2.15.106>
 
 # phpMyAdmin, mysql workbench client tools #
 # modify http service configuration about phpmyadmin configuration #
@@ -32,10 +25,9 @@ mysql> grant all on <database>.* to mysql@10.2.15.106 identified by 'secret'
 # use sakila database #
 	$ mysql -u root -p sakila
 
-# create mysql user account 'mysql' #
-	mysql> create user 'mysql'@'localhost' identified by 'secret';
-# grant privileges to 'mysql' account #
-	mysql> grant all privileges on sakila.* to 'mysql'@'localhost';
+# export/import with mysql workbench, backup database with mysqldump #
+	$ mysqldump -u root -p sakila > sakila.sql
+	$ mysql -u root -p sakila2 < sakila.sql
 
 # mysql data type #
 	CHAR/VARCHAR: 255/65535
@@ -78,7 +70,20 @@ mysql> grant all on <database>.* to mysql@10.2.15.106 identified by 'secret'
 	my-huge.cnf, my-innodb-heavy-4G.cnf, my-large.cnf
 	my-medium.cnf, my-small.cnf
 
-# export/import with mysql workbench, backup database with mysqldump #
-	$ mysqldump -u root -p sakila > sakila.sql
-	$ mysql -u root -p sakila2 < sakila.sql
+
+# mysql privilege management #
+
+# create mysql user account 'mysql' #
+	mysql> create user 'mysql'@'localhost' identified by 'secret';
+
+# mysql create new account 'mysql/secret' and grant database access priviliege #
+mysql> grant all on sakila.* to mysql@10.2.15.106 identified by 'secret'
+# remote login database management system on ip 10.2.15.106 #
+$ mysql -h 10.2.15.109 -u mysql -p
+
+# grant privileges to 'mysql' account #
+	mysql> grant all privileges on sakila.* to 'mysql'@'localhost';
+	mysql> grant usage on sakila.* to 'mysql'@'localhost';
+# show mysql users prilieges #
+	mysql> show grants for root@10.2.15.106;
 
