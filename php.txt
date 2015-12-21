@@ -10,3 +10,26 @@
 # php array: www.php.net/manual/en/ref.array.php #
 
 # php types: string, int/integer, float, array, bool/boolean #
+
+# debug php error: modify /etc/php.ini file #
+	display_errors = On
+	error_reporting = E_ALL
+
+# in php code: #
+	ini_set('display_errors', 'On');
+	error_reporting(E_ALL);
+
+# config apache log handle in /etc/httpd/httpd.conf #
+# check php error log in /var/log/httpd/error_log #
+# debug php code #
+	echo $variable;		// variable value
+	print_r($array);	// print readable array
+	gettype($variable);	// variable type
+	var_dump($variable);	// variable type and value
+	get_defined_vars();	// array of defined variables;
+	debug_backtrace();	// show backtrace
+
+# php debug tools #
+	xdebug		http://xdebug.org
+	DBG		http://www.php-debugger.com/dbg/
+	FirePHP		http://www.firephp.org/
