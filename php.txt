@@ -43,3 +43,20 @@
 # urlencode is early stand, but rawurlencode is more compatible generally. #
 
 # include(), require(), include_once(), require_once() #
+
+# php database api info: #
+# http://php.net/manual/en/mysqlinfo.api.choosing.php #
+mysql - Original MySQL API (obsolete)
+
+mysqli - MySQL "improved" API
+	mysqli_connect(), mysqli_connect_errno(),
+	mysqli_connect_error(), mysqli_close()
+
+	mysqli_query(), mysqli_fetch_row(), mysqli_free_result()
+
+	mysql_fetch_row: results are in a standard array, keys are integers
+	mysql_fetch_assoc: results are in an assoicative array, keys are column names
+	mysql_fetch_array: results in either or both types of arrays
+		- MYSQL_NUM, MYSQL_ASSOC, MYSQL_BOTH
+
+PDO - PHP Data Objects
